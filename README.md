@@ -1,14 +1,5 @@
 
 Obsor – Python Obfuscation Framework
-================================================
-
-Tool Information
-----------------
-Tool Name: Obsor  
-Author: g0w6y  
-Version: 2.0  
-Language: Python  
-License: MIT  
 
 Obsor is an advanced, multi-layer Python code obfuscation framework designed for
 code protection, intellectual property security, and security research. It supports
