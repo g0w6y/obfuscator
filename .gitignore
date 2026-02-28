@@ -1,0 +1,80 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+.python-version
+
+# ===============================
+# Virtual Environments
+# ===============================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ===============================
+# Build / Distribution
+# ===============================
+build/
+dist/
+*.spec
+*.egg-info/
+.eggs/
+wheels/
+
+# ===============================
+# PyInstaller
+# ===============================
+*.exe
+*.exe.manifest
+*.spec
+dist/
+build/
+
+# ===============================
+# Obfuscator / Obsor Outputs
+# ===============================
+obfuscated.py
+obfuscated_*.py
+protected.py
+protected_*.py
+chunked.py
+ultra_protected.py
+output/
+temp/
+test_output/
+
+# ===============================
+# Key Material (IMPORTANT)
+# ===============================
+*.keys
+keys.txt
+key.txt
+
+# ===============================
+# Logs
+# ===============================
+*.log
+
+# ===============================
+# IDEs / Editors
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+desktop.ini
