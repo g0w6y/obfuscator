@@ -1,5 +1,6 @@
 
 Obsor – Python Obfuscation Framework
+<img width="1024" height="1536" alt="obsor" src="https://github.com/user-attachments/assets/bad7edad-e5f6-4f28-9fab-5722a173f6ab" />
 
 Obsor is an advanced, multi-layer Python code obfuscation framework designed for
 code protection, intellectual property security, and security research. It supports
