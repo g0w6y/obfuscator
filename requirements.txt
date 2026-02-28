@@ -1,2 +1,4 @@
-pyfiglet
-colorama
+colorama>=0.4.6
+pycryptodome>=3.19.0
+pyinstaller>=6.3.0
+pyfiglet>=0.8.post1
