@@ -1,5 +1,5 @@
 
-Obsor – Python Obfuscation Framework
+## Obsor
 <p align="center">
   <img src="https://github.com/user-attachments/assets/bad7edad-e5f6-4f28-9fab-5722a173f6ab"
        alt="OBSOR Logo"
