@@ -1,11 +1,3 @@
-# Obsor
-![Python Version](https://img.shields.io/badge/python-3.7+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
-![Security](https://img.shields.io/badge/security-hardened-orange?style=for-the-badge&logo=hackthebox&logoColor=white)
-
-[![Stars](https://img.shields.io/github/stars/g0w6y/obsor?style=social)](https://github.com/g0w6y/obsor/stargazers)
-[![Forks](https://img.shields.io/github/forks/g0w6y/obsor?style=social)](https://github.com/g0w6y/obsor/network/members)
 
 Obsor – Python Obfuscation Framework
 ================================================
@@ -130,14 +122,14 @@ Optional:
 Basic Usage
 -----------
 ```
-python obfuscator.py -i input_script.py -o output.py
+python obsor.py -i input_script.py -o output.py
 ```
 ------------------------------------------------------------
 
 Command Line Interface
 ----------------------
 ```
-python obfuscator.py [-h]
+python obsor.py [-h]
     -i INPUT
     [-o OUTPUT]
     [-m METHODS]
@@ -159,27 +151,27 @@ Usage Examples
 
 Basic obfuscation:
 ```
-python obfuscator.py -i script.py -o obfuscated.py -m base64,zlib
+python obsor.py -i script.py -o obfuscated.py -m base64,zlib
 ```
 Military-grade preset with executable:
 ```
-python obfuscator.py -i script.py --preset military --build-exe
+python obsor.py -i script.py --preset military --build-exe
 ```
 AES encryption with custom key:
 ```
-python obfuscator.py -i script.py -m aes,base85 -k "MySecretKey123"
+python obsor.py -i script.py -m aes,base85 -k "MySecretKey123"
 ```
 Test obfuscated script:
 ```
-python obfuscator.py -i script.py -m base64,zlib --test
+python obsor.py -i script.py -m base64,zlib --test
 ```
 List available methods:
 ```
-python obfuscator.py --list-methods
+python obsor.py --list-methods
 ```
 Create standalone executable with icon:
 ```
-python obfuscator.py -i script.py --preset max --build-exe --exe-icon icon.ico
+python obsor.py -i script.py --preset max --build-exe --exe-icon icon.ico
 ```
 ------------------------------------------------------------
 
@@ -197,7 +189,7 @@ Project Structure
 -----------------
 ```
 obsor/
-├── obfuscator.py
+├── obsor.py
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
