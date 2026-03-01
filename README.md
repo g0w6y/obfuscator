@@ -189,6 +189,7 @@ obsor/
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
+├── NOTICE
 └── dist/
 ```
 ------------------------------------------------------------
@@ -227,12 +228,14 @@ Steps:
 
 ## ⚖️ Attribution & Licensing
 
-This project is licensed under the **Apache License 2.0**. 
+This project is licensed under the **Apache License 2.0**.
 
-If you use this framework in your own projects, redistribution, or security research, you **must** provide credit by linking back to the original author:
-- **Project:** Obsor Python Obfuscator  
-- **Author:** [g0w6y](https://github.com/g0w6y)  
-- **Repository:** [https://github.com/g0w6y/obsor](https://github.com/g0w6y/obsor)
+When redistributing or using this project, you must comply with the Apache License by retaining the `LICENSE` and `NOTICE` files.
+
+Attribution is appreciated. If you choose to credit the original work, you may reference:
+* **Project:** Obsor Python Obfuscator  
+* **Author:** Gouri Sankar A. ([g0w6y](https://github.com/g0w6y))  
+* **Repository:** [https://github.com/g0w6y/obsor](https://github.com/g0w6y/obsor)
 
 ![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)
 
