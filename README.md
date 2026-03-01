@@ -147,27 +147,27 @@ Usage Examples
 
 Basic obfuscation:
 ```
-python obsor.py -i script.py -o obfuscated.py -m base64,zlib
+python main.py.py -i script.py -o obfuscated.py -m base64,zlib
 ```
 Military-grade preset with executable:
 ```
-python obsor.py -i script.py --preset military --build-exe
+python main.py -i script.py --preset military --build-exe
 ```
 AES encryption with custom key:
 ```
-python obsor.py -i script.py -m aes,base85 -k "MySecretKey123"
+python main.py -i script.py -m aes,base85 -k "MySecretKey123"
 ```
 Test obfuscated script:
 ```
-python obsor.py -i script.py -m base64,zlib --test
+python main.py -i script.py -m base64,zlib --test
 ```
 List available methods:
 ```
-python obsor.py --list-methods
+python main.py --list-methods
 ```
 Create standalone executable with icon:
 ```
-python obsor.py -i script.py --preset max --build-exe --exe-icon icon.ico
+python main.py -i script.py --preset max --build-exe --exe-icon icon.ico
 ```
 ------------------------------------------------------------
 
@@ -185,7 +185,8 @@ Project Structure
 -----------------
 ```
 obsor/
-├── obsor.py
+├── obsor.py #obfuscated example
+├── main.py 
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
