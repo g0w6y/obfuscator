@@ -6,7 +6,7 @@
        width="480">
 </p>
 
-Obsor is an advanced, multi-layer Python code obfuscation framework designed for
+Obsor is an advanced Open-Source multi-layer Python code obfuscation framework designed for
 code protection, intellectual property security, and security research. It supports
 over 20 obfuscation and encryption techniques, preset protection profiles, executable
 building, and automated testing.
@@ -226,17 +226,17 @@ Steps:
 
 ------------------------------------------------------------
 
-## ⚖️ Attribution & Licensing
+⚖️ Attribution & Licensing
+This project is licensed under the Apache License 2.0.
 
-This project is licensed under the **Apache License 2.0**.
-
-When redistributing or using this project, you must comply with the Apache License by retaining the `LICENSE` and `NOTICE` files.
+When redistributing or using this project, you must comply with the Apache License by retaining the LICENSE and NOTICE files.
 
 Attribution is appreciated. If you choose to credit the original work, you may reference:
-* **Project:** Obsor Python Obfuscator  
-* **Author:** Gouri Sankar A. ([g0w6y](https://github.com/g0w6y))  
-* **Repository:** [https://github.com/g0w6y/obsor](https://github.com/g0w6y/obsor)
 
-![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)
+Project: Obsor Python Obfuscator
+
+Author: Gouri Sankar A. (g0w6y)
+
+Repository: https://github.com/g0w6y/obsor
 
 Built by g0w6y
