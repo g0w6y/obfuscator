@@ -1,4 +1,12 @@
-#Author : g0w6y
+#!/usr/bin/env python3
+# 
+# Copyright 2026 Gouri Sankar A. (g0w6y)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
 
 def _ws_decode(s):
     b = ''.join(['0' if c == ' ' else '1' for c in s])
