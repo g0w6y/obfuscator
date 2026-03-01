@@ -6,7 +6,6 @@ __pycache__/
 *.pyd
 *.so
 *.dll
-.python-version
 
 # ===============================
 # Virtual Environments
@@ -24,7 +23,6 @@ venv.bak/
 # ===============================
 build/
 dist/
-*.spec
 *.egg-info/
 .eggs/
 wheels/
@@ -35,26 +33,25 @@ wheels/
 *.exe
 *.exe.manifest
 *.spec
-dist/
-build/
 
 # ===============================
-# Obfuscator / Obsor Outputs
+# Obsor / Obfuscator Outputs
 # ===============================
-obfuscated.py
-obfuscated_*.py
-protected.py
-protected_*.py
-chunked.py
-ultra_protected.py
 output/
 temp/
 test_output/
+obfuscated*.py
+protected*.py
+chunked.py
+ultra_protected.py
 
 # ===============================
-# Key Material (IMPORTANT)
+# Key Material (CRITICAL)
 # ===============================
+*.key
 *.keys
+*.pem
+*.secret
 keys.txt
 key.txt
 
