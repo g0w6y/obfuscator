@@ -1,243 +1,190 @@
+<h1 align="center">
+  <img src="https://github.com/user-attachments/assets/bad7edad-e5f6-4f28-9fab-5722a173f6ab" alt="Obsor" width="420">
+</h1>
 
-## Obsor
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/bad7edad-e5f6-4f28-9fab-5722a173f6ab"
-       alt="OBSOR Logo"
-       width="480">
+  <b>Advanced multi-layer Python obfuscation framework</b><br>
+  AES-256 encryption · 23+ techniques · Preset profiles · Executable builder
 </p>
 
-Obsor is an advanced Open-Source multi-layer Python code obfuscation framework designed for
-code protection, intellectual property security, and security research. It supports
-over 20 obfuscation and encryption techniques, preset protection profiles, executable
-building, and automated testing.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.7%2B-blue?style=flat-square&logo=python&logoColor=white">
+  <img src="https://img.shields.io/github/license/g0w6y/obsor?style=flat-square&color=green">
+  <img src="https://img.shields.io/github/stars/g0w6y/obsor?style=flat-square&color=yellow">
+  <img src="https://img.shields.io/github/last-commit/g0w6y/obsor?style=flat-square&color=blue">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square">
+</p>
 
-This tool focuses on making Python source code difficult to analyze while maintaining
-full runtime compatibility.
+---
 
-------------------------------------------------------------
+## What is Obsor?
 
-Features
---------
+Obsor is an open-source Python code obfuscation framework that makes your source code extremely difficult to reverse-engineer — while keeping it fully functional at runtime.
 
-- 23+ obfuscation and encoding techniques
-- Multi-layer obfuscation (unlimited stacking)
-- Preset protection modes (military, max, light, stealth)
-- AES-256-CBC encryption using pycryptodome
-- Pure-Python RC4 implementation
-- Classical cipher support (Vigenère, Caesar, Atbash, Polybius)
-- Compression-based obfuscation (zlib, bz2)
-- Bytecode serialization using marshal
+It supports **23+ obfuscation and encryption techniques**, preset protection profiles, standalone executable building, and built-in self-testing.
+
+---
+
+## Features
+
+| Category | Techniques |
+|---|---|
+| **Encoding** | Base64, Base32, Base85, Hex, Octal, URL, UUEncode, Charcode |
+| **Encryption** | AES-256-CBC, XOR, RC4, Vigenère, Caesar, Atbash, Polybius |
+| **Compression** | zlib (DEFLATE), bz2 (BZIP2) |
+| **Bytecode** | Marshal serialization |
+| **Transform** | Minify, Reverse, Split, Whitespace encoding, ROT13 |
+
+- Multi-layer stacking (unlimited depth)
 - Automatic random key generation
-- Optional custom keys for supported methods
-- Executable builder using PyInstaller
-- Built-in obfuscated script testing
-- Cross-platform support (Windows, macOS, Linux)
-- Colored CLI output and progress animation
+- Optional custom keys
+- 4 built-in preset profiles
+- PyInstaller executable builder
+- Built-in obfuscated script self-test
+- Colored CLI with progress animation
 
-------------------------------------------------------------
+---
 
-Obfuscation Techniques Explained
---------------------------------
+## Installation
 
-Encoding:
-- Base64 / Base32 / Base85
-- Hexadecimal
-- Octal
-- URL percent encoding
-- UUEncode
-- Character code conversion
-
-Encryption:
-- AES-256-CBC (secure symmetric encryption)
-- XOR (single-byte)
-- RC4 stream cipher
-- Vigenère cipher
-- Caesar cipher
-- Atbash cipher
-- Polybius square cipher
-
-Compression:
-- zlib (DEFLATE)
-- bz2 (BZIP2)
-
-Bytecode:
-- Marshal serialization (Python bytecode)
-
-Layering / Transformation:
-- Minify (remove comments and extra whitespace)
-- Reverse
-- Split (chunk-based reconstruction)
-- Whitespace encoding (tabs/spaces)
-- ROT13
-
-------------------------------------------------------------
-
-Preset Modes
-------------
-
-military  
-`minify → aes → zlib → base85 → split → reverse → marshal → vigenere `
-
-max  
-`minify → aes → marshal → bz2 → base64 → xor → whitespace → rc4  `
-
-light  
-base64 → reverse  
-
-stealth  
-`whitespace → split → charcode → hex → url `
-
-------------------------------------------------------------
-
-Installation
-------------
-
-Clone the repository:
-```
+```bash
 git clone https://github.com/g0w6y/obsor
 cd obsor
-```
-Install dependencies:
-```
 pip install -r requirements.txt
 ```
-------------------------------------------------------------
 
-Requirements
-------------
+**Requirements:** Python 3.7+
 
-- Python 3.7 or newer
+Optional dependencies:
+- `pycryptodome` — required for AES-256
+- `pyinstaller` — required for executable building
+- `colorama` — colored terminal output
 
-Optional:
-- pycryptodome (required for AES)
-- pyinstaller (required for executable building)
-- colorama (for colored output)
+---
 
-------------------------------------------------------------
+## Quick Start
 
-Basic Usage
------------
-```
-python obsor.py -i input_script.py -o output.py
-```
-------------------------------------------------------------
+```bash
+# Basic obfuscation
+python main.py -i script.py -o protected.py -m base64,zlib
 
-Command Line Interface
-----------------------
-```
-python obsor.py [-h]
-    -i INPUT
-    [-o OUTPUT]
-    [-m METHODS]
-    [--preset {military,max,light,stealth}]
-    [-k KEY]
-    [--chunk-size CHUNK_SIZE]
-    [--list-methods]
-    [--build-exe]
-    [--exe-onefile]
-    [--exe-console]
-    [--exe-icon EXE_ICON]
-    [--test]
-    [--save-keys]
-```
-------------------------------------------------------------
+# Use a preset
+python main.py -i script.py --preset military
 
-Usage Examples
---------------
+# Test that obfuscated output still works
+python main.py -i script.py --preset max --test
 
-Basic obfuscation:
-```
-python main.py.py -i script.py -o obfuscated.py -m base64,zlib
-```
-Military-grade preset with executable:
-```
+# Build a standalone executable
 python main.py -i script.py --preset military --build-exe
 ```
-AES encryption with custom key:
-```
-python main.py -i script.py -m aes,base85 -k "MySecretKey123"
-```
-Test obfuscated script:
-```
-python main.py -i script.py -m base64,zlib --test
-```
-List available methods:
-```
-python main.py --list-methods
-```
-Create standalone executable with icon:
-```
-python main.py -i script.py --preset max --build-exe --exe-icon icon.ico
-```
-------------------------------------------------------------
 
-Cross-Platform Notes
---------------------
+---
 
-- Fully compatible with Windows, macOS, and Linux
-- Generated executables are OS-specific
-- Marshal output depends on Python version
-- AES requires pycryptodome to be installed on the target system
+## Preset Profiles
 
-------------------------------------------------------------
+| Preset | Pipeline | Use Case |
+|---|---|---|
+| `military` | `minify → aes → zlib → base85 → split → reverse → marshal → vigenere` | Maximum protection |
+| `max` | `minify → aes → marshal → bz2 → base64 → xor → whitespace → rc4` | Heavy multi-layer |
+| `stealth` | `whitespace → split → charcode → hex → url` | Evade static analysis |
+| `light` | `base64 → reverse` | Quick / lightweight |
 
-Project Structure
------------------
+```bash
+python main.py -i script.py --preset military
+python main.py -i script.py --preset stealth
+python main.py -i script.py --preset light
+```
+
+---
+
+## CLI Reference
+
+```
+python main.py [-h]
+    -i INPUT                     Input Python script
+    [-o OUTPUT]                  Output file (default: obfuscated_<input>)
+    [-m METHODS]                 Comma-separated methods (e.g. aes,base64,zlib)
+    [--preset {military,max,light,stealth}]
+    [-k KEY]                     Custom key for supported methods
+    [--chunk-size CHUNK_SIZE]    Chunk size for split method
+    [--list-methods]             List all available obfuscation methods
+    [--build-exe]                Build standalone executable via PyInstaller
+    [--exe-onefile]              Single-file executable
+    [--exe-console]              Console mode executable
+    [--exe-icon EXE_ICON]        Icon file for executable
+    [--test]                     Run and verify the obfuscated output
+    [--save-keys]                Save generated keys to a file
+```
+
+---
+
+## Examples
+
+See [`examples/`](examples/) for ready-to-use sample scripts.
+
+```bash
+# Try obsor on the included sample script
+python main.py -i examples/sample_input.py --preset military --test
+
+# AES with a custom key
+python main.py -i examples/sample_input.py -m aes,base85 -k "MySecretKey123"
+
+# Save keys + build exe
+python main.py -i examples/sample_input.py --preset max --build-exe --save-keys
+```
+
+The file `obsor.py` in the root is `main.py` obfuscated with the `military` preset — a live demo of what Obsor produces.
+
+---
+
+## Project Structure
+
 ```
 obsor/
-├── obsor.py #obfuscated example
-├── main.py 
+├── main.py               # Main obfuscation engine
+├── obsor.py              # main.py obfuscated (military preset demo)
+├── examples/
+│   ├── sample_input.py   # Sample script for testing
+│   └── README.md         # Example usage guide
 ├── requirements.txt
 ├── README.md
-├── LICENSE
-├── NOTICE
-└── dist/
+├── LICENSE               # Apache 2.0
+└── NOTICE
 ```
-------------------------------------------------------------
 
-⚠ Disclaimer
-------------
+---
 
-This tool is intended for educational purposes, security research,
-and legitimate code protection only.
+## Cross-Platform Notes
 
-Do NOT use for:
-- Malicious code distribution
-- Bypassing security measures
-- Illegal activities
-- Hiding malware or viruses
+- Windows, macOS, and Linux all supported
+- Generated executables are OS-specific (build on the target OS)
+- `marshal` output is Python version-dependent — obfuscate and run on the same Python version
+- AES requires `pycryptodome` on the machine running the obfuscated script
 
-The author g0w6y is not responsible for any misuse or damage caused by this tool.
-Users are solely responsible for complying with all applicable local, state,
-and federal laws.
+---
 
-------------------------------------------------------------
-
-Contributing
-------------
+## Contributing
 
 Contributions, issues, and feature requests are welcome.
 
-Steps:
-- Fork the repository
-- Create a feature branch
-- Commit your changes
-- Push to the branch
-- Open a pull request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add: my feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
 
-------------------------------------------------------------
+---
 
-⚖️ Attribution & Licensing
-This project is licensed under the Apache License 2.0.
+## Disclaimer
 
-When redistributing or using this project, you must comply with the Apache License by retaining the LICENSE and NOTICE files.
+This tool is intended for **educational purposes, security research, and legitimate code protection only.**
 
-Attribution is appreciated. If you choose to credit the original work, you may reference:
+Do **not** use Obsor to distribute malware, bypass security systems, or for any illegal activity. The author is not responsible for misuse.
 
-Project: Obsor Python Obfuscator
+---
 
-Author: Gouri Sankar A. (g0w6y)
+## License
 
-Repository: https://github.com/g0w6y/obsor
+Licensed under the [Apache License 2.0](LICENSE).
 
-Built by g0w6y
+Built by [g0w6y](https://github.com/g0w6y)
